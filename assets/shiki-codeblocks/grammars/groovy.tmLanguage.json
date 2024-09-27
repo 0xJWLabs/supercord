@@ -1,12 +1,6 @@
 {
-  "information_for_contributors": [
-    "This file has been converted from https://github.com/textmate/groovy.tmbundle/blob/master/Syntaxes/Groovy.tmLanguage",
-    "If you want to provide a fix or improvement, please create a pull request against the original repository.",
-    "Once accepted there, we are happy to receive an update request."
-  ],
-  "version": "https://github.com/textmate/groovy.tmbundle/commit/85d8f7c97ae473ccb9473f6c8d27e4ec957f4be1",
+  "displayName": "Groovy",
   "name": "groovy",
-  "scopeName": "source.groovy",
   "patterns": [
     {
       "captures": {
@@ -351,7 +345,7 @@
       "end": "\\}",
       "patterns": [
         {
-          "begin": "(?<=\\{)(?=[^\\}]*?->)",
+          "begin": "(?<=\\{)(?=[^}]*?->)",
           "end": "->",
           "endCaptures": {
             "0": {
@@ -642,11 +636,11 @@
           "name": "keyword.operator.in.groovy"
         },
         {
-          "match": "\\?\\:",
+          "match": "\\?:",
           "name": "keyword.operator.elvis.groovy"
         },
         {
-          "match": "\\*\\:",
+          "match": "\\*:",
           "name": "keyword.operator.spreadmap.groovy"
         },
         {
@@ -654,7 +648,7 @@
           "name": "keyword.operator.range.groovy"
         },
         {
-          "match": "\\->",
+          "match": "->",
           "name": "keyword.operator.arrow.groovy"
         },
         {
@@ -709,11 +703,11 @@
           "name": "keyword.operator.assignment.groovy"
         },
         {
-          "match": "(\\-\\-|\\+\\+)",
+          "match": "(--|\\+\\+)",
           "name": "keyword.operator.increment-decrement.groovy"
         },
         {
-          "match": "(\\-|\\+|\\*|\\/|%)",
+          "match": "(-|\\+|\\*|\\/|%)",
           "name": "keyword.operator.arithmetic.groovy"
         },
         {
@@ -781,7 +775,7 @@
           "include": "#annotations"
         },
         {
-          "begin": "(?=(?:\\w|<)[^\\(]*\\s+(?:[\\w$]|<)+\\s*\\()",
+          "begin": "(?=(?:\\w|<)[^(]*\\s+(?:[\\w$]|<)+\\s*\\()",
           "end": "(?=[\\w$]+\\s*\\()",
           "name": "meta.method.return-type.java",
           "patterns": [
@@ -891,7 +885,7 @@
     },
     "methods": {
       "applyEndPatternLast": 1,
-      "begin": "(?x:(?<=;|^|{)(?=\\s*\n                (?:\n                    (?:private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final) # visibility/modifier\n                        |\n                    (?:def)\n                        |\n                    (?:\n                        (?:\n                            (?:void|boolean|byte|char|short|int|float|long|double)\n                                |\n                            (?:@?(?:[a-zA-Z]\\w*\\.)*[A-Z]+\\w*) # object type\n                        )\n                        [\\[\\]]*\n                        (?:<.*>)?\n                    ) \n                    \n                )\n                \\s+\n                ([^=]+\\s+)?\\w+\\s*\\(\n\t\t\t))",
+      "begin": "(?:(?<=;|^|{)(?=\\s*(?:(?:private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final)|(?:def)|(?:(?:(?:void|boolean|byte|char|short|int|float|long|double)|(?:@?(?:[a-zA-Z]\\w*\\.)*[A-Z]+\\w*))[\\[\\]]*(?:<.*>)?))\\s+([^=]+\\s+)?\\w+\\s*\\())",
       "end": "}|(?=[^{])",
       "name": "meta.definition.method.groovy",
       "patterns": [
@@ -917,7 +911,7 @@
     "numbers": {
       "patterns": [
         {
-          "match": "((0(x|X)[0-9a-fA-F]*)|(\\+|-)?\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)([LlFfUuDdg]|UL|ul)?\\b",
+          "match": "((0(x|X)[0-9a-fA-F]*)|(\\+|-)?\\b((\\d+\\.?\\d*)|(\\.\\d+))((e|E)(\\+|-)?\\d+)?)([LlFfUuDdg]|UL|ul)?\\b",
           "name": "constant.numeric.groovy"
         }
       ]
@@ -926,7 +920,7 @@
       "patterns": [
         {
           "begin": "\\b((?:[a-z]\\w*\\.)*(?:[A-Z]+\\w*[a-z]+\\w*|UR[LI]))<",
-          "end": ">|[^\\w\\s,\\?<\\[\\]]",
+          "end": ">|[^\\w\\s,?<\\[\\]]",
           "name": "storage.type.generic.groovy",
           "patterns": [
             {
@@ -966,7 +960,7 @@
       "patterns": [
         {
           "begin": "\\b((?:[a-zA-Z]\\w*\\.)*[A-Z]+\\w*[a-z]+\\w*)<",
-          "end": ">|[^\\w\\s,\\?<\\[\\]]",
+          "end": ">|[^\\w\\s,?<\\[\\]]",
           "name": "entity.other.inherited-class.groovy",
           "patterns": [
             {
@@ -1272,11 +1266,11 @@
     "support-functions": {
       "patterns": [
         {
-          "match": "(?x)\\b(?:sprintf|print(?:f|ln)?)\\b",
+          "match": "\\b(?:sprintf|print(?:f|ln)?)\\b",
           "name": "support.function.print.groovy"
         },
         {
-          "match": "(?x)\\b(?:shouldFail|fail(?:NotEquals)?|ass(?:ume|ert(?:S(?:cript|ame)|N(?:ot(?:Same|\n\t\t\t\t\tNull)|ull)|Contains|T(?:hat|oString|rue)|Inspect|Equals|False|Length|\n\t\t\t\t\tArrayEquals)))\\b",
+          "match": "\\b(?:shouldFail|fail(?:NotEquals)?|ass(?:ume|ert(?:S(?:cript|ame)|N(?:ot(?:Same|Null)|ull)|Contains|T(?:hat|oString|rue)|Inspect|Equals|False|Length|ArrayEquals)))\\b",
           "name": "support.function.testing.groovy"
         }
       ]
@@ -1327,7 +1321,7 @@
       "applyEndPatternLast": 1,
       "patterns": [
         {
-          "begin": "(?x:(?=\n                        (?:\n                            (?:private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final) # visibility/modifier\n                                |\n                            (?:def)\n                                |\n                            (?:void|boolean|byte|char|short|int|float|long|double)\n                                |\n                            (?:(?:[a-z]\\w*\\.)*[A-Z]+\\w*) # object type\n                        )\n                        \\s+\n                        [\\w\\d_<>\\[\\],\\s]+\n                        (?:=|$)\n                        \n        \t\t\t))",
+          "begin": "(?:(?=(?:(?:private|protected|public|native|synchronized|abstract|threadsafe|transient|static|final)|(?:def)|(?:void|boolean|byte|char|short|int|float|long|double)|(?:(?:[a-z]\\w*\\.)*[A-Z]+\\w*))\\s+[\\w\\d_<>\\[\\],\\s]+(?:=|$)))",
           "end": ";|$",
           "name": "meta.definition.variable.groovy",
           "patterns": [
@@ -1340,7 +1334,7 @@
                   "name": "constant.variable.groovy"
                 }
               },
-              "match": "([A-Z_0-9]+)\\s+(?=\\=)"
+              "match": "([A-Z_0-9]+)\\s+(?==)"
             },
             {
               "captures": {
@@ -1348,7 +1342,7 @@
                   "name": "meta.definition.variable.name.groovy"
                 }
               },
-              "match": "(\\w[^\\s,]*)\\s+(?=\\=)"
+              "match": "(\\w[^\\s,]*)\\s+(?==)"
             },
             {
               "begin": "=",
@@ -1379,5 +1373,6 @@
         }
       ]
     }
-  }
+  },
+  "scopeName": "source.groovy"
 }

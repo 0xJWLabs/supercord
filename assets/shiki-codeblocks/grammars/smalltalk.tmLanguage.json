@@ -1,16 +1,11 @@
 {
-  "information_for_contributors": [
-    "This file has been converted from https://github.com/textmate/smalltalk.tmbundle/blob/master/Syntaxes/SmallTalk.tmLanguage",
-    "If you want to provide a fix or improvement, please create a pull request against the original repository.",
-    "Once accepted there, we are happy to receive an update request."
-  ],
-  "name": "smalltalk",
-  "foldingStartMarker": "\\[",
-  "foldingStopMarker": "^\\s*\\]|^\\s\\]",
-  "keyEquivalent": "^~S",
+  "displayName": "Smalltalk",
   "fileTypes": [
     "st"
   ],
+  "foldingStartMarker": "\\[",
+  "foldingStopMarker": "^\\s*\\]|^\\s\\]",
+  "name": "smalltalk",
   "patterns": [
     {
       "match": "\\$.",
@@ -78,7 +73,7 @@
       "name": "keyword.operator.comparison.smalltalk"
     },
     {
-      "match": "(\\*|\\+|\\-|/|\\\\)",
+      "match": "(\\*|\\+|-|/|\\\\)",
       "name": "keyword.operator.arithmetic.smalltalk"
     },
     {
@@ -169,7 +164,7 @@
       "name": "meta.array.byte.smalltalk",
       "patterns": [
         {
-          "match": "[0-9]+(r[a-zA-Z0-9]+)?",
+          "match": "\\d+(r[a-zA-Z0-9]+)?",
           "name": "constant.numeric.integer.smalltalk"
         },
         {
@@ -218,24 +213,23 @@
     "numeric": {
       "patterns": [
         {
-          "match": "(?<!\\w)[0-9]+\\.[0-9]+s[0-9]*",
+          "match": "(?<!\\w)\\d+\\.\\d+s\\d*",
           "name": "constant.numeric.float.scaled.smalltalk"
         },
         {
-          "match": "(?<!\\w)[0-9]+\\.[0-9]+([edq]-?[0-9]+)?",
+          "match": "(?<!\\w)\\d+\\.\\d+([edq]-?\\d+)?",
           "name": "constant.numeric.float.smalltalk"
         },
         {
-          "match": "(?<!\\w)-?[0-9]+r[a-zA-Z0-9]+",
+          "match": "(?<!\\w)-?\\d+r[a-zA-Z0-9]+",
           "name": "constant.numeric.integer.radix.smalltalk"
         },
         {
-          "match": "(?<!\\w)-?[0-9]+([edq]-?[0-9]+)?",
+          "match": "(?<!\\w)-?\\d+([edq]-?\\d+)?",
           "name": "constant.numeric.integer.smalltalk"
         }
       ]
     }
   },
-  "scopeName": "source.smalltalk",
-  "uuid": "1ED64A34-BCB1-44E1-A0FE-84053003E232"
+  "scopeName": "source.smalltalk"
 }

@@ -3,18 +3,21 @@ import type {
   Highlighter,
   ILanguageRegistration as Lang,
   IShikiTheme as Theme,
-} from '@vap/shiki'
-import * as shiki from '@vap/shiki'
-import { createWorkerHost } from '@vap/core/ipc'
+} from 'shiki'
+import * as shiki from 'shiki'
+import { createWorkerHost } from '@supercord/core/ipc';
 
 let highlighter: Highlighter
 
 const spec = {
   async setOnigasm({ wasm }: { wasm: string | ArrayBuffer }) {
-    shiki.setWasm(wasm)
+    shiki.setWasm(wasm);
   },
   async setHighlighter({ theme, langs }: { theme: Theme; langs: Lang[] }) {
-    highlighter = await shiki.getHighlighter({ theme, langs })
+    highlighter = await shiki.getHighlighter({
+      theme,
+      langs
+    })
   },
   async loadTheme({ theme }: { theme: string | Theme }) {
     await highlighter.loadTheme(theme)

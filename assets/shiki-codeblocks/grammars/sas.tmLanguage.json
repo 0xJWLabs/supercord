@@ -1,5 +1,5 @@
 {
-  "comment": "A work in progress--improves over the existing in that it populates symbols, and handles comments more gracefully.",
+  "displayName": "SAS",
   "fileTypes": [
     "sas"
   ],
@@ -168,7 +168,7 @@
       "patterns": [
         {
           "comment": "numeric constant",
-          "match": "(?<![&\\}])\\b[0-9]*\\.?[0-9]+([eEdD][-+]?[0-9]+)?\\b",
+          "match": "(?<![&}])\\b\\d*\\.?\\d+([eEdD][-+]?\\d+)?\\b",
           "name": "constant.numeric.sas"
         },
         {
@@ -251,7 +251,7 @@
     "operator": {
       "patterns": [
         {
-          "match": "([\\+\\-\\*\\^\\/])",
+          "match": "([+\\-\\*\\^\\/])",
           "name": "keyword.operator.arithmetic.sas"
         },
         {
@@ -298,6 +298,5 @@
       ]
     }
   },
-  "scopeName": "source.sas",
-  "uuid": "7e721b1e-6265-4865-bc4b-308d49affba1"
+  "scopeName": "source.sas"
 }

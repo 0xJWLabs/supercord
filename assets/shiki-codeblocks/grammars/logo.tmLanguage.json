@@ -1,7 +1,7 @@
 {
-  "comment": "Roughed out by Paul Bissex <http://e-scribe.com/news/>",
-  "fileTypes": [],
-  "keyEquivalent": "^~L",
+  "displayName": "Logo",
+  "fileTypes": [
+  ],
   "name": "logo",
   "patterns": [
     {
@@ -22,7 +22,7 @@
           "name": "punctuation.definition.variable.logo"
         }
       },
-      "match": "(\\:)(?:\\|[^|]*\\||[-\\w.]*)+",
+      "match": "(:)(?:\\|[^|]*\\||[-\\w.]*)+",
       "name": "variable.parameter.logo"
     },
     {
@@ -51,6 +51,5 @@
       ]
     }
   ],
-  "scopeName": "source.logo",
-  "uuid": "7613EC24-B0F9-4D01-8706-1D54098BFFD8"
+  "scopeName": "source.logo"
 }

@@ -5,7 +5,7 @@
       "inputs": [ "src/**" ],
       "outputs": [ "dist/**" ]
     },
-    "@vap/core#build": {
+    "@supercord/core#build": {
       "inputs": [ "{ipc,log}/**" ],
       "outputs": [ "dist/**" ]
     },

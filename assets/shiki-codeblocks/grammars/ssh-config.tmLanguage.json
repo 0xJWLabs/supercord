@@ -1,4 +1,5 @@
 {
+  "displayName": "SSH Config",
   "fileTypes": [
     "ssh_config",
     ".ssh/config",
@@ -67,11 +68,11 @@
       "match": "(?:^| |\\t)(Host)\\s+((.*))$"
     },
     {
-      "match": "\\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b",
+      "match": "\\b(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\.(25[0-5]|2[0-4]\\d|[01]?\\d\\d?)\\b",
       "name": "constant.numeric.ssh-config"
     },
     {
-      "match": "\\b[0-9]+\\b",
+      "match": "\\b\\d+\\b",
       "name": "constant.numeric.ssh-config"
     },
     {
@@ -83,6 +84,5 @@
       "name": "constant.language.ssh-config"
     }
   ],
-  "scopeName": "source.ssh-config",
-  "uuid": "B273855C-59D3-4DF3-9B7C-E68E0057D315"
+  "scopeName": "source.ssh-config"
 }

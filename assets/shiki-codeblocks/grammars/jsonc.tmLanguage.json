@@ -1,12 +1,6 @@
 {
-  "information_for_contributors": [
-    "This file has been converted from https://github.com/microsoft/vscode-JSON.tmLanguage/blob/master/JSON.tmLanguage",
-    "If you want to provide a fix or improvement, please create a pull request against the original repository.",
-    "Once accepted there, we are happy to receive an update request."
-  ],
-  "version": "https://github.com/microsoft/vscode-JSON.tmLanguage/commit/9bd83f1c252b375e957203f21793316203f61f70",
+  "displayName": "JSON with Comments",
   "name": "jsonc",
-  "scopeName": "source.json.comments",
   "patterns": [
     {
       "include": "#value"
@@ -79,7 +73,7 @@
       "name": "constant.language.json.comments"
     },
     "number": {
-      "match": "(?x)        # turn on extended mode\n  -?        # an optional minus\n  (?:\n    0       # a zero\n    |       # ...or...\n    [1-9]   # a 1-9 character\n    \\d*     # followed by zero or more digits\n  )\n  (?:\n    (?:\n      \\.    # a period\n      \\d+   # followed by one or more digits\n    )?\n    (?:\n      [eE]  # an e character\n      [+-]? # followed by an option +/-\n      \\d+   # followed by one or more digits\n    )?      # make exponent optional\n  )?        # make decimal portion optional",
+      "match": "-?(?:0|[1-9]\\d*)(?:(?:\\.\\d+)?(?:[eE][+-]?\\d+)?)?",
       "name": "constant.numeric.json.comments"
     },
     "object": {
@@ -130,28 +124,8 @@
           ]
         },
         {
-          "match": "[^\\s\\}]",
+          "match": "[^\\s}]",
           "name": "invalid.illegal.expected-dictionary-separator.json.comments"
-        }
-      ]
-    },
-    "string": {
-      "begin": "\"",
-      "beginCaptures": {
-        "0": {
-          "name": "punctuation.definition.string.begin.json.comments"
-        }
-      },
-      "end": "\"",
-      "endCaptures": {
-        "0": {
-          "name": "punctuation.definition.string.end.json.comments"
-        }
-      },
-      "name": "string.quoted.double.json.comments",
-      "patterns": [
-        {
-          "include": "#stringcontent"
         }
       ]
     },
@@ -175,10 +149,30 @@
         }
       ]
     },
+    "string": {
+      "begin": "\"",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.begin.json.comments"
+        }
+      },
+      "end": "\"",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.string.end.json.comments"
+        }
+      },
+      "name": "string.quoted.double.json.comments",
+      "patterns": [
+        {
+          "include": "#stringcontent"
+        }
+      ]
+    },
     "stringcontent": {
       "patterns": [
         {
-          "match": "(?x)                # turn on extended mode\n  \\\\                # a literal backslash\n  (?:               # ...followed by...\n    [\"\\\\/bfnrt]     # one of these characters\n    |               # ...or...\n    u               # a u\n    [0-9a-fA-F]{4}) # and four hex digits",
+          "match": "\\\\(?:[\"\\\\/bfnrt]|u[0-9a-fA-F]{4})",
           "name": "constant.character.escape.json.comments"
         },
         {
@@ -209,5 +203,6 @@
         }
       ]
     }
-  }
+  },
+  "scopeName": "source.json.comments"
 }
